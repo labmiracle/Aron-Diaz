@@ -10,7 +10,7 @@ if (select_dificult == 1 || select_dificult == 2 ||select_dificult == 3){
     
 }
 else{
-    alert ("Ingrese un número valido")
+    alert ("Ingrese un número valido 😅")
 }
 
 
@@ -35,7 +35,7 @@ if (difficulty == 1) {
         let userNumber = prompt("Introduce un numero del 1 al 10.");
         intent++;
         if (userNumber == aleatoryNumber){
-            alert(`Ganaste!! Utilizaste ${intent}  intentos.`);
+            alert(`Ganaste!!😄🙌 Utilizaste ${intent}  intentos.`);
          game = true;
         
         }else if (userNumber > aleatoryNumber){
@@ -56,7 +56,7 @@ if (difficulty == 2) {
         let userNumber = prompt("Introduce un numero del 1 al 10.");
         intent++;
         if (userNumber == aleatoryNumber){
-            alert(`Ganaste!! Utilizaste ${intent} intentos.`);
+            alert(`Ganaste!!😄🙌 Utilizaste ${intent} intentos.`);
          game = true;
         }else if (userNumber > aleatoryNumber){
             alert("El numero es menor")
@@ -68,7 +68,7 @@ if (difficulty == 2) {
     if (intent == 5){
         alert("Sin intentos");
     }
-    }2
+    }
 }
 
 
@@ -78,7 +78,7 @@ if (difficulty == 3) {
         let userNumber = prompt("Introduce un numero del 1 al 10.");
         intent++;
         if (userNumber == aleatoryNumber){
-            alert(`Ganaste!! Utilizaste ${intent} intentos.`);
+            alert(`Ganaste!! 😄🙌 Utilizaste ${intent} intentos.`);
          game = true;
         }else if (userNumber > aleatoryNumber){
             alert("El numero es menor")
