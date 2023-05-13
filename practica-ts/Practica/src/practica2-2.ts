@@ -1,3 +1,4 @@
+//2.2
 function padLeft(value: string, padding: number | string): string {
 
     if (typeof padding === "number"){
