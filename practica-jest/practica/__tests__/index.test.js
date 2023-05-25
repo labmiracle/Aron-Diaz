@@ -39,6 +39,14 @@ describe("Validaciones año bisiesto", () => {
 });
 
 //1.3
+const { adn } = require("../1-3.js");
+
+describe("Validaciones ADN", () => {
+  test("", () => {
+    expect(adn("")).toBe("");
+    expect(adn("CTAGGGA")).toBe("CTAG");
+  });
+});
 
 //1.4
 const { sumPositives } = require("../1-4.js");
@@ -78,6 +86,8 @@ describe("Validaciones 1 y 0", () => {
 
 //1.7
 // Tests
+const {lookup} = require("../1-7.js")
+
 describe("lookup()", () => {
   it("lookup(<login>, 'likes') should return likes for the specified user.", () => {
     const actual = lookup("norvig", "likes");
