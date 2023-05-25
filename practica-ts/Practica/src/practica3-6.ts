@@ -2,7 +2,7 @@
 let multiply: (val1: number, val2: number) => number
 let capitalize: (val: string) => string
 multiply = function (val1: number, val2: number): number {
-    return val1 * val2;
+    return val1 * val2
 }
 
 capitalize = function (val: string): string {

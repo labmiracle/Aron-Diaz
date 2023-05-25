@@ -1,10 +1,10 @@
 //3.3
-function computeScore(word: string):number {
+function computeScore(word: string): number {
     const letters = word.toUpperCase().split('')
     return letters.reduce((accum, curr) => (accum += getPointsFor(curr)), 0)
 }
 
-function getPointsFor(letter: string):number {
+function getPointsFor(letter: string): number {
     const lettersAndPoints: [string, number][] = [
         ['AEOIULNRST', 1],
         ['DG', 2],

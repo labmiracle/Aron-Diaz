@@ -47,7 +47,7 @@ function getRandomAnimal() {
     return animals[Math.floor(Math.random() * animals.length)]
 }
 
-function interrogateAnimal(animal: Animal = getRandomAnimal()):string {
+function interrogateAnimal(animal: Animal = getRandomAnimal()): string {
     if (animal instanceof Fish) {
         animal.swim(10) // se llama solo si es un pez
     } else {

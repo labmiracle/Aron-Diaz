@@ -1,5 +1,5 @@
 //3.4
-function greet(greeting: string = "Hola!"):string {
+function greet(greeting: string = 'Hola!'): string {
     return greeting.toUpperCase()
 }
 

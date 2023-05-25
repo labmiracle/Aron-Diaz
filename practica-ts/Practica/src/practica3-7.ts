@@ -7,9 +7,9 @@ function pushToCollection<T>(item: T, collection: T[]): T[] {
 }
 
 // Anadir algunas cosas a las colecciones
-pushToCollection("false", stringCollection)
+pushToCollection('false', stringCollection)
 pushToCollection('hi', stringCollection)
-pushToCollection("[]", stringCollection)
+pushToCollection('[]', stringCollection)
 
 pushToCollection(1, numberCollection)
 pushToCollection(2, numberCollection)
