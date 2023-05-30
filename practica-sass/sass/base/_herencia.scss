@@ -1,0 +1,24 @@
+.react {
+    @extend .title;
+    color: blue;
+
+}
+
+.angular {
+    @extend .title;
+    color: red;
+
+}
+
+.vue {
+    @extend .title;
+    color: green;
+
+}
+
+
+.svelte {
+    @extend .title;
+    color: orangered;
+
+}
