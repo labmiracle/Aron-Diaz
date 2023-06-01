@@ -86,7 +86,7 @@ describe("Validaciones 1 y 0", () => {
 
 //1.7
 // Tests
-const {lookup} = require("../1-7.js")
+const { lookup } = require("../1-7.js");
 
 describe("lookup()", () => {
   it("lookup(<login>, 'likes') should return likes for the specified user.", () => {
@@ -95,20 +95,45 @@ describe("lookup()", () => {
 
     expect(actual).toEqual(expected);
   });
+
   it("lookup(<login>, 'lastName') should return the last name for the specified user", () => {
     const actual = lookup("knuth", "lastName");
     const expected = "Knuth";
 
     expect(actual).toEqual(expected);
   });
+
   it("with unknown user should throw an error with the correct message", () => {
     expect(() => {
       lookup("nobody", "likes");
     }).toThrow(/Could not find user/);
   });
+
   it("with unknown property should throw an error the correct message", () => {
     expect(() => {
       lookup("mfowler", "noprop");
     }).toThrow(/Could not find property/);
+  });
+});
+
+//1.8
+
+
+describe("setPrice()", () => {
+  it("should set the price in the given item object, immutably.", () => {
+    const item = {
+      name: "test",
+      price: 30,
+    };
+    const copy = Object.assign({}, item);
+
+    const actual = setPrice(item, 50);
+    const expected = {
+      name: "test",
+      price: 50,
+    };
+
+    expect(actual).toEqual(expected);
+    expect(item).toEqual(copy);
   });
 });

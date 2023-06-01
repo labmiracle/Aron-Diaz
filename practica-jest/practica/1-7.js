@@ -27,4 +27,24 @@ const users = [
 ];
 
 // lookup()
-const lookup = (login, property) => {};
+const lookup = (login, property) => {
+  let userLog;
+
+  users.forEach((user) => {
+    if (user.login === login) {
+      userLog = user;
+    }
+  });
+
+  if (!userLog) {
+    throw new Error(`Could not find user: ${login}`);
+  }
+
+  if (!userLog.hasOwnProperty(property)) {
+    throw new Error(`Could not find property: ${property}`);
+  }
+
+  return userLog[property];
+};
+
+module.exports = { lookup };
