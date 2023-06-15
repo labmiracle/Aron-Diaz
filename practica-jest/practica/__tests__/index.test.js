@@ -14,7 +14,7 @@ describe("Validaciones fizzbuzz", () => {
     expect(fizzBuzz(5)).toBe("Buzz");
     expect(fizzBuzz(25)).toBe("Buzz");
   });
-  test("0", () => {
+  test("Número es igual a 0", () => {
     expect(fizzBuzz(0)).toBe(0);
   });
   test("String", () => {
