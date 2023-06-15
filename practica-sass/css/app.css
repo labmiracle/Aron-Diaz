@@ -58,6 +58,13 @@ ul li {
     color: orangered;
     border: 2px solid rgba(255, 68, 0, 0.7); }
 
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
 .ind-text {
   background-color: #307fce;
   color: black;
@@ -65,9 +72,12 @@ ul li {
   text-decoration: none;
   padding: 1rem 3rem;
   text-align: center;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
   transition: all 1s; }
   .ind-text:hover {
     background-color: #8d318d;
+    -webkit-text-decoration: solid underline black 3px;
     text-decoration: solid underline black 3px;
     border: 0px 0px 3px 0px solid black;
     cursor: pointer; }

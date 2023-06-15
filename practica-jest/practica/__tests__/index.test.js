@@ -117,7 +117,7 @@ describe("lookup()", () => {
 });
 
 //1.8
-
+const { setPrice } = require("../1-8.js");
 
 describe("setPrice()", () => {
   it("should set the price in the given item object, immutably.", () => {
@@ -135,5 +135,24 @@ describe("setPrice()", () => {
 
     expect(actual).toEqual(expected);
     expect(item).toEqual(copy);
+  });
+});
+
+const { addToCart } = require("../1-8.js");
+
+describe("addToCart()", () => {
+  it("should add item to cart, immutably", () => {
+    const originalCart = [];
+    const item = {
+      name: "Toy",
+      price: 30,
+    };
+    const copy = originalCart.slice();
+
+    const actual = addToCart(originalCart, item);
+    const expected = [item];
+
+    expect(actual).toEqual(expected);
+    expect(originalCart).toEqual(copy);
   });
 });

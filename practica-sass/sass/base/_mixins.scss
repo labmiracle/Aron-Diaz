@@ -1,17 +1,27 @@
 @mixin text($color1) {
-    background-color: $color1;
-    color: black;   
-    font-weight: bold;
-    text-decoration: none;
-    padding: 1rem 3rem;
-    text-align: center;
-    transition: all 1s;
-    
+  background-color: $color1;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  text-align: center;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
 
-    &:hover {
-        background-color: darken(rgb(156, 54, 156), 4);
-        text-decoration: solid underline black 3px;
-        border: 0px 0px 3px 0px solid black;
-        cursor: pointer;
-    }
+  &:hover {
+    background-color: darken(rgb(156, 54, 156), 4);
+    -webkit-text-decoration: solid underline black 3px;
+    text-decoration: solid underline black 3px;
+    border: 0px 0px 3px 0px solid black;
+    cursor: pointer;
+  }
+}
+
+@mixin reset {
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

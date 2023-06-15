@@ -1,24 +1,19 @@
 .react {
-    @extend .title;
-    color: blue;
-
+  @extend .title;
+  color: blue;
 }
 
 .angular {
-    @extend .title;
-    color: red;
-
+  @extend .title;
+  color: red;
 }
 
 .vue {
-    @extend .title;
-    color: green;
-
+  @extend .title;
+  color: green;
 }
 
-
 .svelte {
-    @extend .title;
-    color: orangered;
-
+  @extend .title;
+  color: orangered;
 }

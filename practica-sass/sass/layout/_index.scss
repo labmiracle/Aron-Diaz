@@ -1,3 +1,7 @@
+* {
+  @include reset;
+}
+
 .ind-text {
   @include text($color1);
 }
