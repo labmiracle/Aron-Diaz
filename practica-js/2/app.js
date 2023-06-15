@@ -1,5 +1,6 @@
 //Ejercicio 2
 
+
 function sum(arr, n) {
   if (n === 0) {
     return 0;
