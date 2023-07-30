@@ -1,12 +1,12 @@
 import "./App.css";
-import Form from "./components/Form"; 
+import Form from "./components/Form";
 import { useState } from "react";
-import Task from "./components/Task";
+import ListContainer from "./components/ListContainer";
 
 function App() {
-const [task, setTask] = useState("");
+  const [task, setTask] = useState("");
 
-const [listTask, setListTask] = useState([]);
+  const [listTask, setListTask] = useState([]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -20,19 +20,31 @@ const [listTask, setListTask] = useState([]);
       id: Date.now(),
       task: task,
       completed: false,
+    };
 
+    const temp = [newTask, ...listTask];
+    setListTask(temp);
+
+    setTask("");
   }
-
-  const temp = [newTask, ...listTask];
-  setListTask(temp);
-
-  setTask("");
-  console.log(listTask);
-}
 
   function handleChange(e) {
     setTask(e.target.value);
-    console.log(task);
+  }
+
+  function updateTask(objEditTask) {
+    const { id, task } = objEditTask;
+
+    const temp = [...listTask];
+    const element = temp.find((item) => item.id === id);
+    element.task = task;
+
+    setListTask(temp);
+  }
+
+  function deleteTask(id) {
+    const temp = listTask.filter((item) => item.id !== id);
+    setListTask(temp);
   }
 
   return (
@@ -41,26 +53,18 @@ const [listTask, setListTask] = useState([]);
         <h1>TO DO LIST</h1>
 
         <div className="formcontainer">
-          <Form task={task} handleSubmit={handleSubmit} handleChange={handleChange} />
+          <Form
+            task={task}
+            handleSubmit={handleSubmit}
+            handleChange={handleChange}
+          />
         </div>
-        <div className="taskcontainer">
-          <h2>List</h2>
-          <div className="infocontainer">
 
-            {
-            listTask.map(task => (
-              <Task 
-              key={task.id}
-              id={task.id}
-              task={task}
-              
-              />
-            ) )
-            
-            }
-          </div>
-
-        </div>
+        <ListContainer
+          listTask={listTask}
+          updateTask={updateTask}
+          deleteTask={deleteTask}
+        />
       </div>
     </>
   );

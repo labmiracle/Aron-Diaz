@@ -4,9 +4,19 @@ export default function Form(props) {
   return (
     <>
       <form onSubmit={handleSubmit} action="">
-        <input type="text" placeholder="Add a task" onChange={handleChange} value={task}/>
+        <input
+          type="text"
+          placeholder="Add a task"
+          onChange={handleChange}
+          value={task}
+        />
 
-        <input type="submit" className="btn" value="ADD" onClick={handleSubmit}/>
+        <input
+          type="submit"
+          className="btn"
+          value="ADD"
+          onClick={handleSubmit}
+        />
       </form>
     </>
   );
