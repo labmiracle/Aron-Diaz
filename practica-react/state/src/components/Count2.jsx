@@ -1,23 +1,27 @@
-// import { useState } from "react";
+import { useState } from "react";
 
-// const Counter2 = () => {
-//   const [text, setText] = useState("");
+const Counter2 = () => {
+  const [text, setText] = useState("");
+  const letters = ["R", "E", "A", "C", "T"];
 
-//   const increment = () => {
-//     setText(text + "A");
-//   };
-//   const dec = () => {
-//     setText(text.substring(0, text.length - 1));
-//   };
+  const increment = () => {
+    const index = Math.floor(Math.random() * letters.length);
+    const aleatoryLetter = letters[index];
+    setText(text + aleatoryLetter);
+  };
 
-// return{
-//     text,
-//     increment,
-//     dec
-// }
+  const decrement = () => {
+    setText(text.substring(0, text.length - 1));
+  };
 
-// };
-
-
-
-// export default Counter2;
+  return (
+    <>
+      <div>{text}</div>
+      <div className="card">
+        <button onClick={decrement}> - </button>
+        <button onClick={increment}> + </button>
+      </div>
+    </>
+  );
+};
+export default Counter2;

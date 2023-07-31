@@ -1,33 +1,15 @@
-import { useState } from "react";
-
 import "./App.css";
-import Title from "./components/Title";
 
-const useCounter = () => {
-  const [counter, setCounter] = useState(0);
-
-  const increase = () => setCounter(counter + 1);
-  const decrement = () => setCounter(counter - 1);
-
-  return {
-    counter,
-    increase,
-    decrement,
-  };
-};
+import Counter from "./components/Counter";
+import Counter2 from "./components/Count2";
 
 function App() {
-  const { counter, increase, decrement } = useCounter();
-
   return (
     <div>
-      <Title></Title>
-      <div>{counter}</div>
-      <div className="card">
-        <button onClick={decrement}>-</button>
-
-        <button onClick={increase}>+</button>
-      </div>
+      <h2>Counter</h2>
+      <Counter />
+      <h2>Counter 2</h2>
+      <Counter2 />
     </div>
   );
 }
