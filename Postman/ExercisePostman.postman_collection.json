@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "839f34b8-740c-4d7f-9291-cac47af92607",
+		"name": "ExercisePostman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28314001"
+	},
+	"item": [
+		{
+			"name": "Check health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/zen"
+			},
+			"response": []
+		},
+		{
+			"name": "Create repository",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"MiracleLab API Repo\",\r\n\"description\": \"Postman\",\r\n\"private\": true,\r\n\"auto_init\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/user/repos"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete repository",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"MiracleLab API Repo\",\r\n\"description\": \"Postman\",\r\n\"private\": true,\r\n\"auto_init\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/repos/:owner/:repo",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"repos",
+						":owner",
+						":repo"
+					],
+					"variable": [
+						{
+							"key": "owner",
+							"value": "arondiaz"
+						},
+						{
+							"key": "repo",
+							"value": "MiracleLab-API-Repo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create an issue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\": \"Found a bug\",\r\n\"body\": \"I´m having a problem with this\",\r\n\"labels\": [\"bug\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/repos/:owner/:repo/issues",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"repos",
+						":owner",
+						":repo",
+						"issues"
+					],
+					"variable": [
+						{
+							"key": "owner",
+							"value": "arondiaz"
+						},
+						{
+							"key": "repo",
+							"value": "MiracleLab-API-Repo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user private",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/user"
+			},
+			"response": []
+		},
+		{
+			"name": "Get user info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/users/{{username}}"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "username",
+			"value": "arondiaz",
+			"type": "string"
+		},
+		{
+			"key": "url",
+			"value": "https://api.github.com",
+			"type": "string"
+		}
+	]
+}
